@@ -177,7 +177,7 @@ function pauseZroom() {
 }
 
 function resumeZroom() {
-    if (zroomIntervalId == null) {
+    if (zroomIntervalId != null) {
         return;
     }
 
