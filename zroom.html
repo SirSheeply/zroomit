@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <header>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="zroom.css" rel="stylesheet"/>
+        <script type="text/javascript" src="zroom.js"></script>
+    </header>
+
+    <body id="bodyID" class="bodyDark">
+        <h1 class="center">ZROOM IT</h1>
+        <p class="center">Zroom It is a speed reading app that by displaying words in rapid sucession, aims to provide a more fun and faster reading experience.</p>
+
+        <div class="center">
+            <div class="zroom-area" id="zroom-display" disabled>
+                <div><span id="zroom-display-text">ZROOOOOOM</span></div>
+                <div id="zroom-display-scroll">
+                    <span id="zroom-scroll-past-word" class="scrolling-text">past words</span>
+                    <span id="zroom-scroll-current-word">current words</span>
+                    <span id="zroom-scroll-post-word"class=" scrolling-text">future words</span>
+                </div>
+            </div>
+            <textarea class="zroom-area" id="zroom-paste" onkeyup="countWords()">This is a sample section of text, to test the string processing of zroom-it. It contains lots of different symbols; like commas, semicolons, and returns/newlines.
+                "A failed test is a successful check!" ~Sean's test quote 
+            </textarea>
+        </div>
+        <div class="center">
+            <div style="display: inline-block;">
+                <button id="zroom-start-button" type="button"  onclick="startZroom()">ZROOM IT!</button>
+                <button id="zroom-stop-button" type="button"  onclick="stopZroom()">STOP ZROOM!</button>
+                <input type="number" id="wpm-box" name="Words Per Minite" min="1" max="1000" value="300" onkeyup="countWords()" onmouseup="countWords()"/>
+                <label>Words Per Minute</label>
+                <p> Word Count:
+                    <span id="word-count">0 (0 Seconds)</span>
+                </p>
+            </div>
+            <div style="position: relative; float: right;">
+                <button id="zroom-pause-button" disabled type="button" onclick="pauseZroom()"><i class="material-icons">pause</i></button>
+                <button id="zroom-resume-button" disabled type="button" onclick="resumeZroom()"><i class="material-icons">play_arrow</i></button>
+                <button id="darkmode-button" type="button" onclick="darkmodeToggle()"><i class="material-icons">brightness_6</i></button>
+                <br/><label>Time Remaining:<label><p><span id="read-time-remaining">0 (0 Seconds)</span></p>
+            </div>
+            <script type="text/javascript">
+                countWords();
+             </script>
+        </div>
+
+    </body>
+</html>
